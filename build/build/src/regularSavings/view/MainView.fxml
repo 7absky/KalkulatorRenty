@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="regularSavings.controller.MainController">
+   <children>
+      <VBox>
+         <children>
+            <Label text="Podaj wysokość swojej przyszłej emerytury : ">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Okres oszczędzania : ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Oprocentowanie lokaty : ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <Button fx:id="calcButton" mnemonicParsing="false" onAction="#calculatePMT" text="Oblicz">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearAll" text="Wyczyść ">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <TextArea fx:id="textArea" prefHeight="258.0" prefWidth="371.0" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </TextArea>
+               </children>
+            </HBox>
+            <Button fx:id="copyButton" mnemonicParsing="false" onAction="#copyInfoArea" text="Skopiuj">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <TextField fx:id="moneyTextField" alignment="CENTER">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="8.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="periodTextField" alignment="CENTER">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="7.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="rateTextField" alignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="7.0" />
+               </VBox.margin>
+            </TextField>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="49.0" prefWidth="177.0" text="Tyle musisz odkładać miesięcznie [zł] :" textAlignment="CENTER" wrapText="true" />
+            <TextField fx:id="pmtInfo" alignment="CENTER" style="&lt;color&gt;: green;">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="49.0" prefWidth="177.0" text="Zgromadzony kapitał [zł] :" textAlignment="CENTER" wrapText="true" />
+            <TextField fx:id="fvInfo" alignment="CENTER" disable="true">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="49.0" prefWidth="177.0" text="Oprocentowanie netto Twojej lokaty [%]:" textAlignment="CENTER" wrapText="true" />
+            <TextField fx:id="rateInfo" alignment="CENTER" disable="true" editable="false">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+      </VBox>
+   </children>
+</HBox>
