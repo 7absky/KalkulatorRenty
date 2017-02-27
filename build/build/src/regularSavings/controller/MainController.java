@@ -55,21 +55,21 @@ public class MainController implements Initializable{
     
     @FXML
     private void calculatePMT (ActionEvent event) {
-    	System.out.println("Wywołanie funkcji liczącej");
-    	moneyTextField.setDisable(true);
-    	periodTextField.setDisable(true);
-    	rateTextField.setDisable(true);
+    	
+    	moneyTextField.setDisable(true); periodTextField.setDisable(true); rateTextField.setDisable(true);
     	
     	double BELKATAX = 0.19;
-    	double annuitySupplement = Double.parseDouble(moneyTextField.getText());
     	double monthsNum = 12.0;
-    	int yearlyAnnuity = (int)(annuitySupplement * monthsNum * (1+BELKATAX));
+  
+    	double annuitySupplement = Double.parseDouble(moneyTextField.getText());
     	double savingPeriodMonths = Double.parseDouble(periodTextField.getText()) * monthsNum;
     	double annualPercRate = Double.parseDouble(rateTextField.getText());
+    	
+    	int yearlyAnnuity = (int)(annuitySupplement * monthsNum * (1+BELKATAX));
     	double fixedRate = Double.parseDouble(rateTextField.getText()) * (1-BELKATAX);
     	double fixedMonthlyRate = ((annualPercRate)/1200 )* (1- BELKATAX);
+    	
     	// annual revenue from rates before-tax  
-    	//double annualNettoIncome =  (annuitySupplement * 12) * (1+BELKATAX);
     	double a = fixedMonthlyRate + 1.0 ;
     	double power = Math.pow(a, monthsNum);
     	int futureValue =(int)((int)(annuitySupplement * monthsNum) / (power-1));
@@ -122,14 +122,7 @@ public class MainController implements Initializable{
 		rateTextField.setPromptText("%");
 		pmtInfo.setDisable(true);
 		
-		
-//		calcButton.addEventFilter(ActionEvent.ACTION, new EventHandler <ActionEvent>() {
-//			@Override 
-//			public void handle (ActionEvent event) {
-//				System.out.println("W konsoli pojawi się : " + event.getEventType());
-//				textArea.setText(""+calculatePMT());
-//			}
-//		});
+
 	}
 
 }

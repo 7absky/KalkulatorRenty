@@ -67,7 +67,7 @@
                   </TextArea>
                </children>
             </HBox>
-            <Button fx:id="copyButton" mnemonicParsing="false" onAction="#copyInfoArea" text="Skopiuj">
+            <Button fx:id="copyButton" mnemonicParsing="false" onAction="#copyInfoArea" text="Skopiuj treść podsumowania">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
